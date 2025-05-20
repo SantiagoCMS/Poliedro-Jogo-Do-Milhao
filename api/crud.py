@@ -15,7 +15,7 @@ class UserCRUD:
         db.commit()
         db.refresh(db_user)
         return db_user
-
+    
     def get_user_by_email(self, db: Session, email: str) -> Optional[models.Usuario]:
         return db.query(models.Usuario).filter(models.Usuario.email == email).first()
     
